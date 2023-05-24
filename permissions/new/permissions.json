@@ -954,7 +954,7 @@
           ],
           "paths": {
             "/applications": "least=DelegatedWork,Application",
-            "/applications(appid={value})": "least=DelegatedWork,Application",
+            "/applications(appid={value})": "least=DelegatedWork,DelegatedPersonal,Application",
             "/applications/{id}": "least=DelegatedWork,DelegatedPersonal,Application",
             "/applications/{id}/extensionproperties": "least=DelegatedWork,DelegatedPersonal,Application",
             "/applications/{id}/extensionproperties/{id}": "least=DelegatedWork,DelegatedPersonal,Application"
@@ -1133,9 +1133,9 @@
           ],
           "paths": {
             "/applications": "least=DelegatedWork,DelegatedPersonal",
-            "/applications(appid={value})/federatedidentitycredentials": "least=DelegatedPersonal",
+            "/applications(appid={value})/federatedidentitycredentials": "least=DelegatedWork,DelegatedPersonal,Application",
             "/applications/{id}/extensionproperties": "least=DelegatedWork,DelegatedPersonal",
-            "/applications/{id}/federatedidentitycredentials": "least=DelegatedPersonal"
+            "/applications/{id}/federatedidentitycredentials": "least=DelegatedWork,DelegatedPersonal,Application"
           }
         },
         {
@@ -1335,7 +1335,7 @@
             "GET"
           ],
           "paths": {
-            "/applications/{id}/extensionproperties/{id}": "least=DelegatedWork,DelegatedPersonal"
+            "/applications/{id}/extensionproperties/{id}": ""
           }
         },
         {
@@ -5904,7 +5904,7 @@
           "paths": {
             "/devicemanagement/monitoring/alertrules/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/virtualendpoint/externalpartnersettings/{id}": "least=DelegatedWork,Application",
-            "/devicemanagement/virtualendpoint/organizationsettings": "least=DelegatedWork,Application"
+            "/devicemanagement/virtualendpoint/organizationsettings": ""
           }
         },
         {
@@ -5943,7 +5943,7 @@
             "/devicemanagement/virtualendpoint/deviceimages/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/virtualendpoint/usersettings/{id}": "least=DelegatedWork,Application",
             "/rolemanagement/cloudpc/roleassignments/{id}": "least=DelegatedWork,Application",
-            "/rolemanagement/devicemanagement/roleassignments/{id}": "least=DelegatedWork"
+            "/rolemanagement/devicemanagement/roleassignments/{id}": ""
           }
         },
         {
@@ -6026,7 +6026,7 @@
           ],
           "paths": {
             "/rolemanagement/cloudpc/roleassignments": "least=DelegatedWork,Application",
-            "/rolemanagement/devicemanagement/roleassignments": "least=DelegatedWork,Application"
+            "/rolemanagement/devicemanagement/roleassignments": "least=DelegatedWork"
           }
         }
       ],
@@ -7814,7 +7814,7 @@
           "paths": {
             "/createremotehelpsessionresponse": "",
             "/createremotehelpsessionresponse/{id}": "",
-            "/deviceappmanagement": "",
+            "/deviceappmanagement": "least=DelegatedWork,Application",
             "/deviceappmanagement/androidmanagedappprotections/{id}/apps": "least=DelegatedWork,Application",
             "/deviceappmanagement/androidmanagedappprotections/{id}/apps/{id}": "least=DelegatedWork,Application",
             "/deviceappmanagement/androidmanagedappprotections/{id}/assignments": "least=DelegatedWork,Application",
@@ -8879,11 +8879,11 @@
             "PATCH"
           ],
           "paths": {
-            "/devicemanagement/devicecompliancescripts/{id}/assignments/{id}": "least=DelegatedWork",
-            "/devicemanagement/devicehealthscripts/{id}": "least=DelegatedWork",
-            "/devicemanagement/devicehealthscripts/{id}/assignments/{id}": "least=DelegatedWork",
-            "/devicemanagement/devicehealthscripts/{id}/devicerunstates/{id}": "least=DelegatedWork",
-            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates/{id}": "least=DelegatedWork"
+            "/devicemanagement/devicecompliancescripts/{id}/assignments/{id}": "least=DelegatedWork,Application",
+            "/devicemanagement/devicehealthscripts/{id}": "least=DelegatedWork,Application",
+            "/devicemanagement/devicehealthscripts/{id}/assignments/{id}": "least=DelegatedWork,Application",
+            "/devicemanagement/devicehealthscripts/{id}/devicerunstates/{id}": "least=DelegatedWork,Application",
+            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates/{id}": "least=DelegatedWork,Application"
           }
         },
         {
@@ -9013,7 +9013,7 @@
             "/devicemanagement/devicecompliancepolicysettingstatesummaries": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancepolicysettingstatesummaries/{id}/devicecompliancesettingstates": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancescripts": "least=DelegatedWork,Application",
-            "/devicemanagement/devicecompliancescripts/{id}/assignments": "least=Application",
+            "/devicemanagement/devicecompliancescripts/{id}/assignments": "",
             "/devicemanagement/devicecompliancescripts/{id}/devicerunstates": "least=DelegatedWork,Application",
             "/devicemanagement/deviceconfigurationconflictsummary": "least=DelegatedWork,Application",
             "/devicemanagement/deviceconfigurationrestrictedappsviolations": "least=DelegatedWork,Application",
@@ -9106,15 +9106,15 @@
             "/devicemanagement/devicecustomattributeshellscripts/{id}/userrunstates": "least=DelegatedWork,Application",
             "/devicemanagement/deviceenrollmentconfigurations": "",
             "/devicemanagement/deviceenrollmentconfigurations/{id}/assignments": "",
-            "/devicemanagement/devicehealthscripts": "least=Application",
-            "/devicemanagement/devicehealthscripts/{id}/assignments": "least=Application",
-            "/devicemanagement/devicehealthscripts/{id}/devicerunstates": "least=Application",
+            "/devicemanagement/devicehealthscripts": "",
+            "/devicemanagement/devicehealthscripts/{id}/assignments": "",
+            "/devicemanagement/devicehealthscripts/{id}/devicerunstates": "",
             "/devicemanagement/devicemanagementpartners": "",
             "/devicemanagement/devicemanagementscripts/{id}/assignments": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/detectedapps": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/detectedapps/{id}/manageddevices": "least=DelegatedWork,Application",
-            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates": "least=Application",
+            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates": "",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/logcollectionrequests": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/users/{id}/manageddevices": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/windowsprotectionstate/detectedmalwarestate": "least=DelegatedWork,Application",
@@ -9353,7 +9353,7 @@
             "/devicemanagement/devicecompliancepolicysettingstatesummaries/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancepolicysettingstatesummaries/{id}/devicecompliancesettingstates/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancescripts/{id}": "least=DelegatedWork,Application",
-            "/devicemanagement/devicecompliancescripts/{id}/assignments/{id}": "least=Application",
+            "/devicemanagement/devicecompliancescripts/{id}/assignments/{id}": "",
             "/devicemanagement/devicecompliancescripts/{id}/devicerunstates/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancescripts/{id}/devicerunstates/{id}/manageddevice": "least=DelegatedWork,Application",
             "/devicemanagement/deviceconfigurationconflictsummary/{id}": "least=DelegatedWork,Application",
@@ -9468,9 +9468,9 @@
             "/devicemanagement/devicecustomattributeshellscripts/{id}/userrunstates/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/deviceenrollmentconfigurations/{id}": "",
             "/devicemanagement/deviceenrollmentconfigurations/{id}/assignments/{id}": "",
-            "/devicemanagement/devicehealthscripts/{id}": "least=Application",
-            "/devicemanagement/devicehealthscripts/{id}/assignments/{id}": "least=Application",
-            "/devicemanagement/devicehealthscripts/{id}/devicerunstates/{id}": "least=Application",
+            "/devicemanagement/devicehealthscripts/{id}": "",
+            "/devicemanagement/devicehealthscripts/{id}/assignments/{id}": "",
+            "/devicemanagement/devicehealthscripts/{id}/devicerunstates/{id}": "",
             "/devicemanagement/devicehealthscripts/{id}/devicerunstates/{id}/manageddevice": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementpartners/{id}": "",
             "/devicemanagement/devicemanagementscripts/{id}/assignments/{id}": "least=DelegatedWork,Application",
@@ -9478,7 +9478,7 @@
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/detectedapps/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/detectedapps/{id}/manageddevices/{id}": "least=DelegatedWork,Application",
-            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates/{id}": "least=Application",
+            "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/devicehealthscriptstates/{id}": "",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/logcollectionrequests/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/users/{id}/manageddevices/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/windowsprotectionstate/detectedmalwarestate/{id}": "least=DelegatedWork,Application",
@@ -9653,7 +9653,7 @@
             "PATCH"
           ],
           "paths": {
-            "/deviceappmanagement": "",
+            "/deviceappmanagement": "least=DelegatedWork,Application",
             "/deviceappmanagement/androidmanagedappprotections/{id}/deploymentsummary": "least=DelegatedWork,Application",
             "/deviceappmanagement/defaultmanagedappprotections/{id}/deploymentsummary": "least=DelegatedWork,Application",
             "/deviceappmanagement/iosmanagedappprotections/{id}/deploymentsummary": "least=DelegatedWork,Application",
@@ -9692,7 +9692,7 @@
             "/devicemanagement/deviceconfigurations/{id}/userstatusoverview": "least=DelegatedWork,Application",
             "/devicemanagement/deviceconfigurationuserstatesummaries": "least=DelegatedWork,Application",
             "/devicemanagement/devicecustomattributeshellscripts/{id}/runsummary": "least=DelegatedWork,Application",
-            "/devicemanagement/devicehealthscripts/{id}/runsummary": "least=Application",
+            "/devicemanagement/devicehealthscripts/{id}/runsummary": "",
             "/devicemanagement/devicemanagementscripts/{id}/devicerunstates/{id}/manageddevice/windowsprotectionstate": "least=DelegatedWork,Application",
             "/devicemanagement/devicemanagementscripts/{id}/runsummary": "least=DelegatedWork,Application",
             "/devicemanagement/deviceshellscripts/{id}/runsummary": "least=DelegatedWork,Application",
@@ -10727,7 +10727,7 @@
           ],
           "paths": {
             "/deviceappmanagement/windowsmanagementapp": "",
-            "/devicemanagement": "",
+            "/devicemanagement": "least=DelegatedWork,Application",
             "/devicemanagement/detectedapps/{id}/manageddevices/{id}/devicecategory": "least=DelegatedWork,Application",
             "/devicemanagement/detectedapps/{id}/manageddevices/{id}/windowsprotectionstate": "least=DelegatedWork,Application",
             "/devicemanagement/devicecompliancescripts/{id}/runsummary": "",
@@ -11126,6 +11126,7 @@
             "/devicemanagement": "least=DelegatedWork,Application",
             "/devicemanagement/getassignedroledetails": "",
             "/devicemanagement/geteffectivepermissions": "least=DelegatedWork,Application",
+            "/devicemanagement/geteffectivepermissionsscope={value}": "least=DelegatedWork,Application",
             "/devicemanagement/operationapprovalpolicies": "",
             "/devicemanagement/operationapprovalpolicies/{id}": "",
             "/devicemanagement/operationapprovalpolicies/getapprovableoperations": "",
@@ -11169,8 +11170,7 @@
             "/rolemanagement/entitlementmanagement/roledefinitions": "",
             "/rolemanagement/entitlementmanagement/roledefinitions/{id}": "",
             "/rolemanagement/exchange/roledefinitions": "",
-            "/rolemanagement/exchange/roledefinitions/{id}": "",
-            "devicemanagement/geteffectivepermissionsscope={value}": ""
+            "/rolemanagement/exchange/roledefinitions/{id}": ""
           }
         },
         {
@@ -11345,7 +11345,7 @@
           ],
           "paths": {
             "/rolemanagement/cloudpc/roleassignments/{id}": "",
-            "/rolemanagement/devicemanagement/roleassignments/{id}": "least=Application"
+            "/rolemanagement/devicemanagement/roleassignments/{id}": ""
           }
         }
       ],
@@ -11531,7 +11531,7 @@
             "/devicemanagement/appleuserinitiatedenrollmentprofiles": "least=DelegatedWork,Application",
             "/devicemanagement/appleuserinitiatedenrollmentprofiles/{id}/assignments": "least=DelegatedWork,Application",
             "/devicemanagement/compliancemanagementpartners": "least=DelegatedWork,Application",
-            "/devicemanagement/datasharingconsents": "least=Application",
+            "/devicemanagement/datasharingconsents": "least=DelegatedWork,Application",
             "/devicemanagement/deponboardingsettings": "least=DelegatedWork,Application",
             "/devicemanagement/deponboardingsettings/{id}/enrollmentprofiles": "least=DelegatedWork,Application",
             "/devicemanagement/deponboardingsettings/{id}/importedappledeviceidentities": "least=DelegatedWork,Application",
@@ -11698,7 +11698,7 @@
           ],
           "paths": {
             "/devicemanagement": "",
-            "/devicemanagement/applepushnotificationcertificate": "least=Application",
+            "/devicemanagement/applepushnotificationcertificate": "least=DelegatedWork,Application",
             "/devicemanagement/conditionalaccesssettings": "least=DelegatedWork,Application",
             "/devicemanagement/exchangeonpremisespolicies/{id}": "least=DelegatedWork,Application",
             "/devicemanagement/exchangeonpremisespolicy": "least=DelegatedWork,Application",
@@ -12683,7 +12683,7 @@
             "PUT"
           ],
           "paths": {
-            "/users/{id}/manager": "least=DelegatedWork,Application"
+            "/users/{id}/manager": ""
           }
         }
       ],
@@ -13112,35 +13112,35 @@
             "POST"
           ],
           "paths": {
-            "/compliance/ediscovery/cases": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/custodians": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/custodians/{id}/sitesources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/custodians/{id}/usersources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/legalholds": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/legalholds/{id}/sitesources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/legalholds/{id}/usersources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/noncustodialdatasources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/reviewsets": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/reviewsets/{id}/queries": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/sourcecollections": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}/additionalsources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}/custodiansources": "least=DelegatedWork",
+            "/compliance/ediscovery/cases": "",
+            "/compliance/ediscovery/cases/{id}/custodians": "",
+            "/compliance/ediscovery/cases/{id}/custodians/{id}/sitesources": "",
+            "/compliance/ediscovery/cases/{id}/custodians/{id}/usersources": "",
+            "/compliance/ediscovery/cases/{id}/legalholds": "",
+            "/compliance/ediscovery/cases/{id}/legalholds/{id}/sitesources": "",
+            "/compliance/ediscovery/cases/{id}/legalholds/{id}/usersources": "",
+            "/compliance/ediscovery/cases/{id}/noncustodialdatasources": "",
+            "/compliance/ediscovery/cases/{id}/reviewsets": "",
+            "/compliance/ediscovery/cases/{id}/reviewsets/{id}/queries": "",
+            "/compliance/ediscovery/cases/{id}/sourcecollections": "",
+            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}/additionalsources": "",
+            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}/custodiansources": "",
             "/compliance/ediscovery/cases/{id}/sourcecollections/{id}/noncustodialsources": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/tags": "least=DelegatedWork",
-            "/security/cases/ediscoverycases": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/custodians": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/custodians/{id}/sitesources": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/custodians/{id}/unifiedgroupsources": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/custodians/{id}/usersources": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/legalholds": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/legalholds/{id}/usersources": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/reviewsets": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/reviewsets/{id}/queries": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/searches": "least=DelegatedWork",
+            "/compliance/ediscovery/cases/{id}/tags": "",
+            "/security/cases/ediscoverycases": "",
+            "/security/cases/ediscoverycases/{id}/custodians": "",
+            "/security/cases/ediscoverycases/{id}/custodians/{id}/sitesources": "",
+            "/security/cases/ediscoverycases/{id}/custodians/{id}/unifiedgroupsources": "",
+            "/security/cases/ediscoverycases/{id}/custodians/{id}/usersources": "",
+            "/security/cases/ediscoverycases/{id}/legalholds": "",
+            "/security/cases/ediscoverycases/{id}/legalholds/{id}/usersources": "",
+            "/security/cases/ediscoverycases/{id}/reviewsets": "",
+            "/security/cases/ediscoverycases/{id}/reviewsets/{id}/queries": "",
+            "/security/cases/ediscoverycases/{id}/searches": "",
             "/security/cases/ediscoverycases/{id}/searches/{id}/additionalsources": "least=DelegatedWork",
             "/security/cases/ediscoverycases/{id}/searches/{id}/custodiansources": "least=DelegatedWork",
             "/security/cases/ediscoverycases/{id}/searches/{id}/noncustodialsources": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/tags": "least=DelegatedWork"
+            "/security/cases/ediscoverycases/{id}/tags": ""
           }
         },
         {
@@ -13153,16 +13153,16 @@
             "PATCH"
           ],
           "paths": {
-            "/compliance/ediscovery/cases/{id}": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/legalholds/{id}": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/reviewsets/{id}/queries/{id}": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/tags/{id}": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/legalholds/{id}": "least=DelegatedWork",
+            "/compliance/ediscovery/cases/{id}": "",
+            "/compliance/ediscovery/cases/{id}/legalholds/{id}": "",
+            "/compliance/ediscovery/cases/{id}/reviewsets/{id}/queries/{id}": "",
+            "/compliance/ediscovery/cases/{id}/sourcecollections/{id}": "",
+            "/compliance/ediscovery/cases/{id}/tags/{id}": "",
+            "/security/cases/ediscoverycases/{id}": "",
+            "/security/cases/ediscoverycases/{id}/legalholds/{id}": "",
             "/security/cases/ediscoverycases/{id}/reviewsets/{id}/queries/{id}": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/searches/{id}": "least=DelegatedWork",
-            "/security/cases/ediscoverycases/{id}/tags/{id}": "least=DelegatedWork"
+            "/security/cases/ediscoverycases/{id}/searches/{id}": "",
+            "/security/cases/ediscoverycases/{id}/tags/{id}": ""
           }
         },
         {
@@ -13219,7 +13219,7 @@
             "PATCH"
           ],
           "paths": {
-            "/compliance/ediscovery/cases/{id}/custodians/{id}": "least=DelegatedWork",
+            "/compliance/ediscovery/cases/{id}/custodians/{id}": "",
             "/compliance/ediscovery/cases/{id}/settings": "least=DelegatedWork",
             "/security/cases/ediscoverycases/{id}/settings": "least=DelegatedWork"
           }
@@ -13233,8 +13233,8 @@
             "GET"
           ],
           "paths": {
-            "/compliance/ediscovery/cases/{id}/custodians/{id}/sitesources/{id}": "least=DelegatedWork",
-            "/compliance/ediscovery/cases/{id}/custodians/{id}/usersources/{id}": "least=DelegatedWork"
+            "/compliance/ediscovery/cases/{id}/custodians/{id}/sitesources/{id}": "",
+            "/compliance/ediscovery/cases/{id}/custodians/{id}/usersources/{id}": ""
           }
         },
         {
@@ -14695,8 +14695,8 @@
           "paths": {
             "/identitygovernance/entitlementmanagement/accesspackageassignmentrequests/{id}": "least=DelegatedWork,Application",
             "/identitygovernance/entitlementmanagement/assignmentrequests/{id}": "least=DelegatedWork,Application",
-            "/rolemanagement/directory/roleassignments/{id}": "least=DelegatedWork",
-            "/rolemanagement/entitlementmanagement/roleassignments/{id}": "least=DelegatedWork"
+            "/rolemanagement/directory/roleassignments/{id}": "",
+            "/rolemanagement/entitlementmanagement/roleassignments/{id}": ""
           }
         },
         {
@@ -15125,7 +15125,7 @@
             "PATCH"
           ],
           "paths": {
-            "/external/connections/{id}/groups/{id}": "least=DelegatedWork,Application"
+            "/external/connections/{id}/groups/{id}": ""
           }
         },
         {
@@ -17365,7 +17365,7 @@
             "POST"
           ],
           "paths": {
-            "/drives/{id}/items/{id}": ""
+            "/drives/{id}/items/{id}": "least=Application"
           }
         },
         {
@@ -20811,7 +20811,7 @@
             "/me/messages": "least=DelegatedWork,DelegatedPersonal",
             "/me/messages/{id}": "least=DelegatedWork,DelegatedPersonal",
             "/users/{id}/mailfolders": "",
-            "/users/{id}/mailfolders/{id}": "",
+            "/users/{id}/mailfolders/{id}": "least=DelegatedWork,DelegatedPersonal",
             "/users/{id}/mailfolders/{id}/childfolders": "least=DelegatedWork,DelegatedPersonal",
             "/users/{id}/mailfolders/{id}/messages": "least=DelegatedWork,DelegatedPersonal",
             "/users/{id}/mailfolders/{id}/messages/{id}": "",
@@ -20853,7 +20853,7 @@
             "/me/messages": "least=Application",
             "/me/messages/{id}": "least=Application",
             "/users/{id}/mailfolders": "",
-            "/users/{id}/mailfolders/{id}": "",
+            "/users/{id}/mailfolders/{id}": "least=Application",
             "/users/{id}/mailfolders/{id}/childfolders": "least=Application",
             "/users/{id}/mailfolders/{id}/messages": "least=Application",
             "/users/{id}/mailfolders/{id}/messages/{id}": "",
@@ -22193,10 +22193,10 @@
             "GET"
           ],
           "paths": {
-            "/groups/{id}/onenote/pages/{id}": "least=Application",
-            "/me/onenote/pages/{id}": "least=Application",
-            "/sites/{id}/onenote/pages/{id}": "least=Application",
-            "/users/{id}/onenote/pages/{id}": "least=Application"
+            "/groups/{id}/onenote/pages/{id}": "",
+            "/me/onenote/pages/{id}": "",
+            "/sites/{id}/onenote/pages/{id}": "",
+            "/users/{id}/onenote/pages/{id}": ""
           }
         },
         {
@@ -23433,8 +23433,8 @@
             "PATCH"
           ],
           "paths": {
-            "/identity/conditionalaccess/namedlocations/{id}": "least=DelegatedWork",
-            "/identity/conditionalaccess/policies/{id}": "least=DelegatedWork"
+            "/identity/conditionalaccess/namedlocations/{id}": "least=DelegatedWork,Application",
+            "/identity/conditionalaccess/policies/{id}": "least=DelegatedWork,Application"
           }
         },
         {
@@ -23685,7 +23685,7 @@
             "POST"
           ],
           "paths": {
-            "/applications/{id}/appmanagementpolicies": "least=Application"
+            "/applications/{id}/appmanagementpolicies": ""
           }
         },
         {
@@ -24096,7 +24096,7 @@
             "PATCH"
           ],
           "paths": {
-            "/identity/conditionalaccess/namedlocations/{id}": "least=Application",
+            "/identity/conditionalaccess/namedlocations/{id}": "",
             "/identity/conditionalaccess/policies/{id}": "least=Application"
           }
         },
@@ -24657,6 +24657,7 @@
             "/users/{id}/presence/clearpresence": "least=Application",
             "/users/{id}/presence/clearuserpreferredpresence": "least=Application",
             "/users/{id}/presence/setpresence": "least=Application",
+            "/users/{id}/presence/setstatusmessage": "least=Application",
             "/users/{id}/presence/setuserpreferredpresence": "least=Application"
           }
         }
@@ -26998,7 +26999,7 @@
             "/rolemanagement/devicemanagement/roledefinitions/{id}": "",
             "/rolemanagement/directory/roledefinitions": "",
             "/rolemanagement/directory/roledefinitions/{id}": "",
-            "/rolemanagement/entitlementmanagement/roledefinitions": "",
+            "/rolemanagement/entitlementmanagement/roledefinitions": "least=Application",
             "/rolemanagement/entitlementmanagement/roledefinitions/{id}": "",
             "/rolemanagement/exchange/roledefinitions": "",
             "/rolemanagement/exchange/roledefinitions/{id}": ""
@@ -27269,9 +27270,9 @@
           "paths": {
             "/administrativeunits/{id}/scopedrolemembers/{id}": "least=DelegatedWork,Application",
             "/directory/administrativeunits/{id}/scopedrolemembers/{id}": "least=DelegatedWork,Application",
-            "/rolemanagement/directory/roleassignments/{id}": "least=Application",
-            "/rolemanagement/entitlementmanagement/roleassignments/{id}": "least=Application",
-            "/rolemanagement/exchange/roleassignments/{id}": "least=Application"
+            "/rolemanagement/directory/roleassignments/{id}": "",
+            "/rolemanagement/entitlementmanagement/roleassignments/{id}": "",
+            "/rolemanagement/exchange/roleassignments/{id}": ""
           }
         },
         {
@@ -27834,9 +27835,9 @@
             "POST"
           ],
           "paths": {
-            "/search/acronyms": "least=DelegatedWork,Application",
-            "/search/bookmarks": "least=DelegatedWork,Application",
-            "/search/qnas": "least=DelegatedWork,Application"
+            "/search/acronyms": "",
+            "/search/bookmarks": "",
+            "/search/qnas": ""
           }
         },
         {
@@ -27850,8 +27851,8 @@
             "PATCH"
           ],
           "paths": {
-            "/search/acronyms/{id}": "least=DelegatedWork,Application",
-            "/search/bookmarks/{id}": "least=DelegatedWork,Application"
+            "/search/acronyms/{id}": "",
+            "/search/bookmarks/{id}": ""
           }
         },
         {
@@ -27876,7 +27877,7 @@
             "GET"
           ],
           "paths": {
-            "/search/qnas/{id}": "least=DelegatedWork,Application"
+            "/search/qnas/{id}": ""
           }
         }
       ],
@@ -29499,10 +29500,10 @@
             "/drives/{id}/items/{id}/content": "",
             "/groups/{id}/drive/items/{id}/content": "",
             "/me/drive/items/{id}/content": "",
-            "/me/drive/root:/{id}": "",
+            "/me/drive/root:/{id}": "least=Application",
             "/sites/{id}/drive/items/{id}/content": "",
             "/users/{id}/drive/items/{id}/content": "",
-            "/users/{id}/drive/root:/{id}": ""
+            "/users/{id}/drive/root:/{id}": "least=Application"
           }
         },
         {
@@ -29791,15 +29792,15 @@
             "GET"
           ],
           "paths": {
-            "/applications/{id}/synchronization/templates": "",
-            "/applications/{id}/synchronization/templates/{id}": "",
-            "/applications/{id}/synchronization/templates/{id}/schema": "",
+            "/applications/{id}/synchronization/templates": "least=DelegatedWork",
+            "/applications/{id}/synchronization/templates/{id}": "least=DelegatedWork",
+            "/applications/{id}/synchronization/templates/{id}/schema": "least=DelegatedWork",
             "/serviceprincipals/{id}/synchronization/jobs": "least=DelegatedWork",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema": "",
-            "/serviceprincipals/{id}/synchronization/templates": "",
-            "/serviceprincipals/{id}/synchronization/templates/{id}": "",
-            "/serviceprincipals/{id}/synchronization/templates/{id}/schema": ""
+            "/serviceprincipals/{id}/synchronization/jobs/{id}": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/templates": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/templates/{id}": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/templates/{id}/schema": "least=DelegatedWork"
           }
         }
       ],
@@ -29832,15 +29833,15 @@
             "POST"
           ],
           "paths": {
-            "/applications/{id}/synchronization/acquireaccesstoken": "",
-            "/serviceprincipals/{id}/synchronization/acquireaccesstoken": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/pause": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/provisionondemand": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/restart": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/parseexpression": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/start": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/validatecredentials": "",
-            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/parseexpression": ""
+            "/applications/{id}/synchronization/acquireaccesstoken": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/acquireaccesstoken": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/pause": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/provisionondemand": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/restart": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/parseexpression": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/start": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/validatecredentials": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/parseexpression": "least=DelegatedWork"
           }
         },
         {
@@ -29853,15 +29854,15 @@
           ],
           "paths": {
             "/applications/{id}/synchronization/templates": "",
-            "/applications/{id}/synchronization/templates/{id}/schema/filteroperators": "",
-            "/applications/{id}/synchronization/templates/{id}/schema/functions": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/filteroperators": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/functions": "",
+            "/applications/{id}/synchronization/templates/{id}/schema/filteroperators": "least=DelegatedWork",
+            "/applications/{id}/synchronization/templates/{id}/schema/functions": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/filteroperators": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema/functions": "least=DelegatedWork",
             "/serviceprincipals/{id}/synchronization/templates": "",
             "/serviceprincipals/{id}/synchronization/templates/{id}": "",
             "/serviceprincipals/{id}/synchronization/templates/{id}/schema": "",
-            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/filteroperators": "",
-            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/functions": ""
+            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/filteroperators": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/templates/{id}/schema/functions": "least=DelegatedWork"
           }
         },
         {
@@ -29874,7 +29875,7 @@
             "PATCH"
           ],
           "paths": {
-            "/applications/{id}/synchronization/templates/{id}": ""
+            "/applications/{id}/synchronization/templates/{id}": "least=DelegatedWork"
           }
         },
         {
@@ -29888,8 +29889,8 @@
             "PUT"
           ],
           "paths": {
-            "/applications/{id}/synchronization/templates/{id}/schema": "",
-            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema": ""
+            "/applications/{id}/synchronization/templates/{id}/schema": "least=DelegatedWork",
+            "/serviceprincipals/{id}/synchronization/jobs/{id}/schema": "least=DelegatedWork"
           }
         },
         {
@@ -29902,7 +29903,7 @@
             "POST"
           ],
           "paths": {
-            "/serviceprincipals/{id}/synchronization/jobs": ""
+            "/serviceprincipals/{id}/synchronization/jobs": "least=DelegatedWork"
           }
         },
         {
@@ -29927,7 +29928,7 @@
             "PUT"
           ],
           "paths": {
-            "/serviceprincipals/{id}/synchronization/secrets": ""
+            "/serviceprincipals/{id}/synchronization/secrets": "least=DelegatedWork"
           }
         }
       ],
@@ -32937,7 +32938,7 @@
             "GET"
           ],
           "paths": {
-            "/chats/{id}/tabs/{id}": "least=DelegatedWork"
+            "/chats/{id}/tabs/{id}": ""
           }
         },
         {
@@ -33254,9 +33255,9 @@
             "GET"
           ],
           "paths": {
-            "/teamwork/teamtemplates": "",
-            "/teamwork/teamtemplates/{id}/definitions/{id}": "",
-            "/teamwork/teamtemplates/{id}/definitions/{id}/teamdefinition": ""
+            "/teamwork/teamtemplates": "least=DelegatedWork",
+            "/teamwork/teamtemplates/{id}/definitions/{id}": "least=DelegatedWork",
+            "/teamwork/teamtemplates/{id}/definitions/{id}/teamdefinition": "least=DelegatedWork"
           }
         }
       ],
@@ -33281,9 +33282,9 @@
             "GET"
           ],
           "paths": {
-            "/teamwork/teamtemplates": "",
-            "/teamwork/teamtemplates/{id}/definitions/{id}": "",
-            "/teamwork/teamtemplates/{id}/definitions/{id}/teamdefinition": ""
+            "/teamwork/teamtemplates": "least=Application",
+            "/teamwork/teamtemplates/{id}/definitions/{id}": "least=Application",
+            "/teamwork/teamtemplates/{id}/definitions/{id}/teamdefinition": "least=Application"
           }
         }
       ],
@@ -34980,82 +34981,82 @@
             "GET"
           ],
           "paths": {
-            "/me/profile": "",
-            "/me/profile/account": "",
-            "/me/profile/account/{id}": "",
-            "/me/profile/addresses": "",
-            "/me/profile/addresses/{id}": "",
-            "/me/profile/anniversaries": "",
-            "/me/profile/anniversaries/{id}": "",
-            "/me/profile/awards": "",
-            "/me/profile/awards/{id}": "",
-            "/me/profile/certifications": "",
-            "/me/profile/certifications/{id}": "",
-            "/me/profile/educationalactivities": "",
-            "/me/profile/educationalactivities/{id}": "",
-            "/me/profile/emails": "",
-            "/me/profile/emails/{id}": "",
-            "/me/profile/interests": "",
-            "/me/profile/interests/{id}": "",
-            "/me/profile/languages": "",
-            "/me/profile/languages/{id}": "",
-            "/me/profile/names/{id}": "",
-            "/me/profile/notes": "",
-            "/me/profile/patents": "",
-            "/me/profile/patents/{id}": "",
-            "/me/profile/phones": "",
-            "/me/profile/phones/{id}": "",
-            "/me/profile/positions": "",
-            "/me/profile/positions/{id}": "",
-            "/me/profile/projects": "",
-            "/me/profile/projects/{id}": "",
-            "/me/profile/publications": "",
-            "/me/profile/publications/{id}": "",
-            "/me/profile/skills": "",
-            "/me/profile/skills/{id}": "",
-            "/me/profile/webaccounts": "",
-            "/me/profile/webaccounts/{id}": "",
-            "/me/profile/websites": "",
-            "/me/profile/websites/{id}": "",
-            "/me/responsibilities": "",
-            "/users/{id}/profile": "",
-            "/users/{id}/profile/account": "",
-            "/users/{id}/profile/account/{id}": "",
-            "/users/{id}/profile/addresses": "",
-            "/users/{id}/profile/addresses/{id}": "",
-            "/users/{id}/profile/anniversaries": "",
-            "/users/{id}/profile/anniversaries/{id}": "",
-            "/users/{id}/profile/awards": "",
-            "/users/{id}/profile/awards/{id}": "",
-            "/users/{id}/profile/certifications": "",
-            "/users/{id}/profile/certifications/{id}": "",
-            "/users/{id}/profile/educationalactivities": "",
-            "/users/{id}/profile/educationalactivities/{id}": "",
-            "/users/{id}/profile/emails": "",
-            "/users/{id}/profile/emails/{id}": "",
-            "/users/{id}/profile/interests": "",
-            "/users/{id}/profile/interests/{id}": "",
-            "/users/{id}/profile/languages": "",
-            "/users/{id}/profile/languages/{id}": "",
-            "/users/{id}/profile/names/{id}": "",
-            "/users/{id}/profile/notes": "",
-            "/users/{id}/profile/patents": "",
-            "/users/{id}/profile/patents/{id}": "",
-            "/users/{id}/profile/phones": "",
-            "/users/{id}/profile/phones/{id}": "",
-            "/users/{id}/profile/positions": "",
-            "/users/{id}/profile/positions/{id}": "",
-            "/users/{id}/profile/projects": "",
-            "/users/{id}/profile/projects/{id}": "",
-            "/users/{id}/profile/publications": "",
-            "/users/{id}/profile/publications/{id}": "",
-            "/users/{id}/profile/skills": "",
-            "/users/{id}/profile/skills/{id}": "",
-            "/users/{id}/profile/webaccounts": "",
-            "/users/{id}/profile/webaccounts/{id}": "",
-            "/users/{id}/profile/websites": "",
-            "/users/{id}/profile/websites/{id}": "",
-            "/users/{id}/responsibilities": ""
+            "/me/profile": "least=Application",
+            "/me/profile/account": "least=Application",
+            "/me/profile/account/{id}": "least=Application",
+            "/me/profile/addresses": "least=Application",
+            "/me/profile/addresses/{id}": "least=Application",
+            "/me/profile/anniversaries": "least=Application",
+            "/me/profile/anniversaries/{id}": "least=Application",
+            "/me/profile/awards": "least=Application",
+            "/me/profile/awards/{id}": "least=Application",
+            "/me/profile/certifications": "least=Application",
+            "/me/profile/certifications/{id}": "least=Application",
+            "/me/profile/educationalactivities": "least=Application",
+            "/me/profile/educationalactivities/{id}": "least=Application",
+            "/me/profile/emails": "least=Application",
+            "/me/profile/emails/{id}": "least=Application",
+            "/me/profile/interests": "least=Application",
+            "/me/profile/interests/{id}": "least=Application",
+            "/me/profile/languages": "least=Application",
+            "/me/profile/languages/{id}": "least=Application",
+            "/me/profile/names/{id}": "least=Application",
+            "/me/profile/notes": "least=Application",
+            "/me/profile/patents": "least=Application",
+            "/me/profile/patents/{id}": "least=Application",
+            "/me/profile/phones": "least=Application",
+            "/me/profile/phones/{id}": "least=Application",
+            "/me/profile/positions": "least=Application",
+            "/me/profile/positions/{id}": "least=Application",
+            "/me/profile/projects": "least=Application",
+            "/me/profile/projects/{id}": "least=Application",
+            "/me/profile/publications": "least=Application",
+            "/me/profile/publications/{id}": "least=Application",
+            "/me/profile/skills": "least=Application",
+            "/me/profile/skills/{id}": "least=Application",
+            "/me/profile/webaccounts": "least=Application",
+            "/me/profile/webaccounts/{id}": "least=Application",
+            "/me/profile/websites": "least=Application",
+            "/me/profile/websites/{id}": "least=Application",
+            "/me/responsibilities": "least=Application",
+            "/users/{id}/profile": "least=Application",
+            "/users/{id}/profile/account": "least=Application",
+            "/users/{id}/profile/account/{id}": "least=Application",
+            "/users/{id}/profile/addresses": "least=Application",
+            "/users/{id}/profile/addresses/{id}": "least=Application",
+            "/users/{id}/profile/anniversaries": "least=Application",
+            "/users/{id}/profile/anniversaries/{id}": "least=Application",
+            "/users/{id}/profile/awards": "least=Application",
+            "/users/{id}/profile/awards/{id}": "least=Application",
+            "/users/{id}/profile/certifications": "least=Application",
+            "/users/{id}/profile/certifications/{id}": "least=Application",
+            "/users/{id}/profile/educationalactivities": "least=Application",
+            "/users/{id}/profile/educationalactivities/{id}": "least=Application",
+            "/users/{id}/profile/emails": "least=Application",
+            "/users/{id}/profile/emails/{id}": "least=Application",
+            "/users/{id}/profile/interests": "least=Application",
+            "/users/{id}/profile/interests/{id}": "least=Application",
+            "/users/{id}/profile/languages": "least=Application",
+            "/users/{id}/profile/languages/{id}": "least=Application",
+            "/users/{id}/profile/names/{id}": "least=Application",
+            "/users/{id}/profile/notes": "least=Application",
+            "/users/{id}/profile/patents": "least=Application",
+            "/users/{id}/profile/patents/{id}": "least=Application",
+            "/users/{id}/profile/phones": "least=Application",
+            "/users/{id}/profile/phones/{id}": "least=Application",
+            "/users/{id}/profile/positions": "least=Application",
+            "/users/{id}/profile/positions/{id}": "least=Application",
+            "/users/{id}/profile/projects": "least=Application",
+            "/users/{id}/profile/projects/{id}": "least=Application",
+            "/users/{id}/profile/publications": "least=Application",
+            "/users/{id}/profile/publications/{id}": "least=Application",
+            "/users/{id}/profile/skills": "least=Application",
+            "/users/{id}/profile/skills/{id}": "least=Application",
+            "/users/{id}/profile/webaccounts": "least=Application",
+            "/users/{id}/profile/webaccounts/{id}": "least=Application",
+            "/users/{id}/profile/websites": "least=Application",
+            "/users/{id}/profile/websites/{id}": "least=Application",
+            "/users/{id}/responsibilities": "least=Application"
           }
         },
         {
@@ -35152,7 +35153,7 @@
             "/me/directreports": "",
             "/me/findroomlists": "least=DelegatedWork",
             "/me/findrooms": "least=DelegatedWork",
-            "/me/findrooms(roomlist={value})": "",
+            "/me/findrooms(roomlist={value})": "least=DelegatedWork",
             "/me/oauth2permissiongrants": "least=DelegatedWork",
             "/me/outlook/supportedlanguages": "",
             "/me/outlook/supportedtimezones": "",
@@ -35549,11 +35550,23 @@
             "Application"
           ],
           "methods": [
-            "PATCH",
-            "PUT"
+            "PATCH"
           ],
           "paths": {
             "/settings/regionalandlanguagesettings": "least=DelegatedWork"
+          }
+        },
+        {
+          "schemeKeys": [
+            "DelegatedWork",
+            "DelegatedPersonal",
+            "Application"
+          ],
+          "methods": [
+            "PUT"
+          ],
+          "paths": {
+            "/settings/regionalandlanguagesettings": "least=DelegatedWork,DelegatedPersonal"
           }
         },
         {
@@ -35698,8 +35711,8 @@
             "GET"
           ],
           "paths": {
-            "/me/profile": "least=Application",
-            "/users/{id}/profile": "least=Application"
+            "/me/profile": "",
+            "/users/{id}/profile": ""
           }
         },
         {
@@ -35722,7 +35735,7 @@
             "/me/profile/emails": "least=Application",
             "/me/profile/interests": "least=Application",
             "/me/profile/languages": "least=Application",
-            "/me/profile/names": "least=Application",
+            "/me/profile/names": "",
             "/me/profile/notes": "least=Application",
             "/me/profile/patents": "least=Application",
             "/me/profile/phones": "least=Application",
@@ -35742,7 +35755,7 @@
             "/users/{id}/profile/emails": "least=Application",
             "/users/{id}/profile/interests": "least=Application",
             "/users/{id}/profile/languages": "least=Application",
-            "/users/{id}/profile/names": "least=Application",
+            "/users/{id}/profile/names": "",
             "/users/{id}/profile/notes": "least=Application",
             "/users/{id}/profile/patents": "least=Application",
             "/users/{id}/profile/phones": "least=Application",
@@ -35777,7 +35790,7 @@
             "/me/profile/interests/{id}": "least=Application",
             "/me/profile/languages/{id}": "least=Application",
             "/me/profile/names/{id}": "least=Application",
-            "/me/profile/notes/{id}": "least=Application",
+            "/me/profile/notes/{id}": "",
             "/me/profile/patents/{id}": "least=Application",
             "/me/profile/phones/{id}": "least=Application",
             "/me/profile/positions/{id}": "least=Application",
@@ -35786,7 +35799,7 @@
             "/me/profile/skills/{id}": "least=Application",
             "/me/profile/webaccounts/{id}": "least=Application",
             "/me/profile/websites/{id}": "least=Application",
-            "/me/responsibilities/{id}": "least=Application",
+            "/me/responsibilities/{id}": "",
             "/users/{id}/profile/account/{id}": "least=Application",
             "/users/{id}/profile/addresses/{id}": "least=Application",
             "/users/{id}/profile/anniversaries/{id}": "least=Application",
@@ -35797,7 +35810,7 @@
             "/users/{id}/profile/interests/{id}": "least=Application",
             "/users/{id}/profile/languages/{id}": "least=Application",
             "/users/{id}/profile/names/{id}": "least=Application",
-            "/users/{id}/profile/notes/{id}": "least=Application",
+            "/users/{id}/profile/notes/{id}": "",
             "/users/{id}/profile/patents/{id}": "least=Application",
             "/users/{id}/profile/phones/{id}": "least=Application",
             "/users/{id}/profile/positions/{id}": "least=Application",
@@ -35806,7 +35819,7 @@
             "/users/{id}/profile/skills/{id}": "least=Application",
             "/users/{id}/profile/webaccounts/{id}": "least=Application",
             "/users/{id}/profile/websites/{id}": "least=Application",
-            "/users/{id}/responsibilities/{id}": "least=Application"
+            "/users/{id}/responsibilities/{id}": ""
           }
         },
         {
@@ -35877,7 +35890,19 @@
             "Application"
           ],
           "methods": [
-            "PATCH",
+            "PATCH"
+          ],
+          "paths": {
+            "/settings/regionalandlanguagesettings": "least=Application"
+          }
+        },
+        {
+          "schemeKeys": [
+            "DelegatedWork",
+            "DelegatedPersonal",
+            "Application"
+          ],
+          "methods": [
             "PUT"
           ],
           "paths": {
@@ -36366,18 +36391,18 @@
             "GET"
           ],
           "paths": {
-            "/me/authentication/fido2methods/{id}": "least=Application",
-            "/me/authentication/microsoftauthenticatormethods/{id}": "least=Application",
-            "/me/authentication/passwordlessmicrosoftauthenticatormethods/{id}": "least=Application",
-            "/me/authentication/softwareoathmethods/{id}": "least=Application",
-            "/me/authentication/temporaryaccesspassmethods/{id}": "least=Application",
-            "/me/authentication/windowshelloforbusinessmethods/{id}": "least=Application",
-            "/users/{id}/authentication/fido2methods/{id}": "least=Application",
-            "/users/{id}/authentication/microsoftauthenticatormethods/{id}": "least=Application",
-            "/users/{id}/authentication/passwordlessmicrosoftauthenticatormethods/{id}": "least=Application",
-            "/users/{id}/authentication/softwareoathmethods/{id}": "least=Application",
-            "/users/{id}/authentication/temporaryaccesspassmethods/{id}": "least=Application",
-            "/users/{id}/authentication/windowshelloforbusinessmethods/{id}": "least=Application"
+            "/me/authentication/fido2methods/{id}": "",
+            "/me/authentication/microsoftauthenticatormethods/{id}": "",
+            "/me/authentication/passwordlessmicrosoftauthenticatormethods/{id}": "",
+            "/me/authentication/softwareoathmethods/{id}": "",
+            "/me/authentication/temporaryaccesspassmethods/{id}": "",
+            "/me/authentication/windowshelloforbusinessmethods/{id}": "",
+            "/users/{id}/authentication/fido2methods/{id}": "",
+            "/users/{id}/authentication/microsoftauthenticatormethods/{id}": "",
+            "/users/{id}/authentication/passwordlessmicrosoftauthenticatormethods/{id}": "",
+            "/users/{id}/authentication/softwareoathmethods/{id}": "",
+            "/users/{id}/authentication/temporaryaccesspassmethods/{id}": "",
+            "/users/{id}/authentication/windowshelloforbusinessmethods/{id}": ""
           }
         },
         {
